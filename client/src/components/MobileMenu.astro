@@ -1,0 +1,70 @@
+---
+let isOpen = false; // Keep any Astro component logic here
+---
+
+<!-- Hamburger Menu Icon -->
+<button aria-label="Toggle Menu" class="menu-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#f3eded" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path></svg>
+</button>
+
+<script>
+  let isOpen = false; // Moved inside the script tag
+  const toggleMenu = () => {
+    isOpen = !isOpen;
+    const menu = document.querySelector('.mobile-menu');
+    if (menu) {
+      menu.classList.toggle('translate-x-0');
+      menu.classList.toggle('translate-x-full');
+    }
+  };
+
+  // Close the menu when clicking outside of it
+  const closeMenuOnClickOutside = (event) => {
+    const menu = document.querySelector('.mobile-menu');
+    const menuButton = document.querySelector('.menu-icon'); // Assuming your menu button has a class 'menu-icon'
+    if (menu && !menu.contains(event.target) && !menuButton.contains(event.target)) {
+      isOpen = false;
+      menu.classList.add('translate-x-full');
+      menu.classList.remove('translate-x-0');
+    }
+  };
+
+  document.addEventListener('DOMContentLoaded', (event) => {
+    const menuIcon = document.querySelector('.menu-icon');
+    const closeButton = document.querySelector('.close-icon'); // Select the close button
+
+    if (menuIcon) {
+      menuIcon.addEventListener('click', toggleMenu);
+    }
+    if (closeButton) {
+      closeButton.addEventListener('click', toggleMenu); // Attach the event listener
+    }
+
+    document.addEventListener('click', closeMenuOnClickOutside);
+  });
+</script>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu absolute top-0 right-0 w-64 h-full bg-neutral p-5 transform translate-x-full transition-transform duration-300 ease-in-out">
+  <button aria-label="Close Menu" class="close-icon absolute top-1 right-4 m-4">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg>
+  </button>
+  <!-- Menu Items -->
+  <nav class="mt-12 font-spacemono">
+    <ul>
+      <li><a href="/" class="block p-4 text-black">Home</a></li>
+      <li><a href="/about" class="block p-4 text-black">About</a></li>
+      <li><a href="/services" class="block p-4 text-black">Services</a></li>
+      <li><a href="/contact" class="block p-4 text-black">Contact</a></li>
+    </ul>
+  </nav>
+</div>
+
+<style>
+  .menu-icon:focus {
+    outline: none;
+  }
+  .close-icon:focus {
+    outline: none;
+  }
+</style>

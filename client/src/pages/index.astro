@@ -1,0 +1,584 @@
+---
+import "../css/carousel.css";
+import wordpressLogo from "../assets/logos/wordpress.png";
+import htmlcssjsLogo from "../assets/logos/htmlcssjs.png";
+import reactLogo from "../assets/logos/react.png";
+import typescriptLogo from "../assets/logos/typescript.png";
+import shopifyLogo from "../assets/logos/shopify.png";
+import squarespaceLogo from "../assets/logos/squarespace.png";
+import activecampaignLogo from "../assets/logos/activecampaign.png";
+import keapLogo from "../assets/logos/keap.png";
+import lookerLogo from "../assets/logos/looker.png";
+import flodeskLogo from "../assets/logos/flodesk.png";
+import Header from '../components/Header.astro';
+import 'blaze-slider/dist/blaze.css'
+
+---
+
+<style>
+	/* CSS styles specific to this Astro page */
+	body {
+		overflow-x: hidden;
+		width: 100%;
+	}
+
+	.carousel-row {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+
+.blaze-slider {
+  --slide-gap: 20px;
+  --slides-to-show: 3;
+}
+
+	.avatar-placeholder {
+		display: inline-block;
+		width: 42px;
+		height: 42px;
+		border-radius: 50%;
+		background-image: url('../assets/jamie-headshot.jpg');
+  		background-size: cover;
+  		background-position: center center;
+  		margin-right: 4px;
+	}
+
+	@keyframes pulse {
+		0% {
+			box-shadow: 0 0 0 0px rgba(66, 160, 143, 0.7);
+		}
+		70% {
+			box-shadow: 0 0 0 10px rgba(0, 255, 0, 0);
+		}
+		100% {
+			box-shadow: 0 0 0 0px rgba(0, 255, 0, 0);
+		}
+	}
+
+	.pulsating-circle {
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background-color: #42a08f;
+		animation: pulse 2s infinite;
+		margin-right: 4px;
+	}
+
+	.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  /* Set a specific height or keep it auto */
+  height: 50px; /* Example height */
+  /* Ensure the container's width is what you want */
+  width: 100%; /* Full width */
+}
+
+.marquee-text {
+  padding-left: 100%; /* Start offscreen to the right */
+  animation: marquee 60s linear infinite; /* Adjust timing as needed */
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%); /* Move it all the way to the left */
+  }
+}
+
+
+</style>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>PixelBrew - Virtual Tech Assistance</title>
+	</head>
+	<body class="font-sans bg-gray-50">
+		<Header />
+
+		<section class="bg-accent marquee-container">
+			<div class="py-1 flex items-center justify-center w-full gap-4 marquee-text">
+			<h2 class="text-3xl font-bold font-neuebit text-base-100 uppercase mt-1">
+				<span class="text-primary">Launch Special! </span> 
+				FREE 1 hour consultation call</h2>
+				<a href="#"><button class="text-md text-base-100 font-spacemono">Details →</button></a>
+			</div>
+		</section>
+		<!-- Hero Section -->
+		<section class="bg-base-100">
+			<div class="container mx-auto flex flex-wrap w-full">
+				<div
+					class="flex flex-col items-center justify-between w-full lg:flex-row-reverse"
+				>
+					<div class="bg-woman-typing bg-cover bg-bottom h-full w-1/2">
+						
+				</div>
+					<div class="text-left py-8 md:py-16 w-3/4">
+						<div class="flex flex-row items-center gap-2 mb-3">
+							<div class="avatar-placeholder"></div>
+							<div>
+							<p class="text-neutral text-sm font-bold">
+								Jamie Spann <span class="pulsating-circle ml-2"
+								></span>
+							</p>
+							<span
+									class="badge badge-success text-neutral font-normal text-xs"
+									>Available Now</span
+								>
+						</div>
+						</div>
+						<h1
+							class="text-7xl leading-[3rem] md:text-8xl font-bold font-neuebit text-primary md:leading-[5rem] w-3/4"
+						>
+							Hi, I'm your new Digital Barista.
+						</h1>
+						<p class="py-3 font-spacemono text-secondary">
+							Task & Project Based Virtual Tech Assistant
+						</p>
+						<button
+							class="btn btn-accent rounded-btn font-spacemono mt-4"
+							>Get Started</button
+						>
+					</div>
+				</div>
+			</div>
+			
+		</section>
+
+
+
+		<!-- Section 2 -->
+		<div class="bg-coffee-stain bg-cover bg-center">
+			<section class="py-10 bg-neutral/[.93] text-neutral-content pt-16">
+				<div class="text-center flex flex-col items-center">
+					<h2 class="text-5xl px-5 md:px-0 md:text-6xl w-full md:w-2/3 lg:w-1/3 font-bold text-primary font-neuebit leading-[3rem]">
+						You deserve tech that works. Let's get brewing.
+					</h2>
+					<p class="p-5 md:px-0 w-full md:w-1/2 font-spacemono text-secondary">
+						Pixel Brew is about streamlining your workflow, saving you time, and letting you focus on what you do best.
+					</p>
+					<!-- Logo Carousel -->
+					<div class="slider">
+						<div class="slide-track mix-blend-luminosity">
+							<div class="slide">
+								<img src={wordpressLogo.src} class="carousel-logo" alt="WordPress" />
+							</div>
+							<div class="slide">
+								<img src={htmlcssjsLogo.src} class="carousel-logo" alt="HTML, CSS & Javascript" />
+							</div>
+							<div class="slide">
+								<img src={reactLogo.src} class="carousel-logo" alt="React" />
+							</div>
+							<div class="slide">
+								<img src={typescriptLogo.src} class="carousel-logo" alt="Typescript" />
+							</div>
+							<div class="slide">
+								<img src={shopifyLogo.src} class="carousel-logo" alt="Shopify" />
+							</div>
+							<div class="slide">
+								<img src={squarespaceLogo.src} class="carousel-logo" alt="Squarespace" />
+							</div>
+							<div class="slide">
+								<img src={activecampaignLogo.src} class="carousel-logo" alt="ActiveCampaign" />
+							</div>
+							<div class="slide">
+								<img src={keapLogo.src} class="carousel-logo" alt="Keap" />
+							</div>
+							<div class="slide">
+								<img src={lookerLogo.src} class="carousel-logo" alt="Looker" />
+							</div>
+							<div class="slide">
+								<img src={flodeskLogo.src} class="carousel-logo" alt="Flodesk" />
+							</div>
+			
+							<!-- Duplicate logos -->
+							<div class="slide">
+								<img src={wordpressLogo.src} class="carousel-logo" alt="WordPress" />
+							</div>
+							<div class="slide">
+								<img src={htmlcssjsLogo.src} class="carousel-logo" alt="HTML, CSS & Javascript" />
+							</div>
+							<div class="slide">
+								<img src={reactLogo.src} class="carousel-logo" alt="React" />
+							</div>
+							<div class="slide">
+								<img src={typescriptLogo.src} class="carousel-logo" alt="Typescript" />
+							</div>
+							<div class="slide">
+								<img src={shopifyLogo.src} class="carousel-logo" alt="Shopify" />
+							</div>
+							<div class="slide">
+								<img src={squarespaceLogo.src} class="carousel-logo" alt="Squarespace" />
+							</div>
+							<div class="slide">
+								<img src={activecampaignLogo.src} class="carousel-logo" alt="ActiveCampaign" />
+							</div>
+							<div class="slide">
+								<img src={keapLogo.src} class="carousel-logo" alt="Keap" />
+							</div>
+							<div class="slide">
+								<img src={lookerLogo.src} class="carousel-logo" alt="Looker" />
+							</div>
+							<div class="slide">
+								<img src={flodeskLogo.src} class="carousel-logo" alt="Flodesk" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Section 3 -->
+			<section class="bg-neutral/[.92] text-neutral-content pb-0">
+				<div class="container mx-auto flex flex-wrap">
+					<!-- Left Column -->
+					<div class="w-full md:w-1/2 pr-8 md:pr-0 pl-8 lg:pl-0 pb-16">
+						<p class="font-spacemono">You may be wondering...</p>
+						<h3
+							class="text-6xl font-bold font-neuebit text-primary mb-2 leading-[3rem]"
+						>
+							What kinds of tasks can I request?
+						</h3>
+						<p class="pb-2">
+							Websites that get results? Done. 
+							Automations that make your life easier? Absolutely. Sorting out 
+							that SEO mess? Yep, let's make it happen.
+						</p>
+						<p>
+							I'm the tech friend you didn't know you needed, but now you can't live without. 
+							Need a one-time fix or a got a whole project in mind? Let's get brewing – your success is 
+							my favorite flavor.
+
+						</p>
+						<a href="/services">
+						<button class="btn btn-secondary mt-4"
+							>See Full List of Projects & Tasks</button>
+						</a>
+					</div>
+					<div
+						class="w-full md:w-1/2 flex flex-col items-end -mb-8"
+					>
+					<div class="w-[110%] -mr-36">
+						<div class="carousel-row w-full mb-4" id="carouselRow1">
+							<div class="blaze-slider blaze-slider-1">
+							<div class="blaze-container">
+								<div class="blaze-track-container">
+									<div class="blaze-track">
+										<div
+											class="carousel-item bg-white w-48 h-28 p-6 text-sm rounded-none border border-solid border-base-100 border-1 flex-col"
+										>
+											<p
+												class="text-xs uppercase font-spacemono text-secondary"
+											>
+												Development</p>
+												<p>Website updates & maintenance
+										</div>
+										<div
+											class="carousel-item bg-white w-48 h-28 p-6 text-sm rounded-none border border-solid border-base-100 border-1 flex-col"
+										>
+											<p
+												class="text-xs uppercase font-spacemono text-secondary"
+											>
+												Marketing</p>
+												<p>Systems integration
+										</div>
+										<div
+											class="carousel-item bg-white w-48 h-28 p-6 text-sm rounded-none border border-solid border-base-100 border-1 flex-col"
+										>
+											<p
+												class="text-xs uppercase font-spacemono text-secondary"
+											>
+												Marketing</p>
+												<p>Marketing strategy implementation
+										</div>
+										<div
+											class="carousel-item bg-white w-48 h-28 p-6 text-sm rounded-none border border-solid border-base-100 border-1 flex-col"
+										>
+										<p
+										class="text-xs uppercase font-spacemono text-secondary"
+									>
+										Tech</p>
+										<p>Affordable hosting alternatives
+										</div>
+						</div>
+					</div>
+					</div>
+						</div>
+						</div>
+						<div class="carousel-row w-full mb-4 gap-x-20px" id="carouselRow2">
+							<div class="blaze-slider blaze-slider-2">
+								<div class="blaze-container">
+									<div class="blaze-track-container">
+										<div class="blaze-track">
+							<div
+								class="carousel-item bg-white w-48 h-28 p-6 text-sm rounded-none border border-solid border-base-100 border-1 flex-col"
+							>
+								<p
+									class="text-xs uppercase font-spacemono text-secondary"
+								>
+									Tech</p>
+									<p>Web hosting & domain assistance
+							</div>
+							<div
+								class="carousel-item bg-white w-48 h-28 p-6 text-sm rounded-none border border-solid border-base-100 border-1 flex-col"
+							>
+								<p
+									class="text-xs uppercase font-spacemono text-secondary"
+								>
+									Development</p>
+									<p>Design to code</p>
+							</div>
+							<div
+								class="carousel-item bg-white w-48 h-28 p-6 text-sm rounded-none border border-solid border-base-100 border-1 flex-col"
+							>
+								<p
+									class="text-xs uppercase font-spacemono text-secondary"
+								>
+									Marketing</p>
+									<p>Email & SMS broadcasts</p>
+							</div>
+							<div
+								class="carousel-item bg-white w-48 h-28 p-6 text-sm rounded-none border border-solid border-base-100 border-1 flex-col"
+							>
+							<p
+							class="text-xs uppercase font-spacemono text-secondary"
+						>
+							Marketing</p>
+							<p>Reporting dashboards</p>
+							</div>
+
+						</div>
+					</div>
+					</div>
+				</div>
+						</div>
+						<div class="carousel-row w-full" id="carouselRow3">
+							<div class="blaze-slider blaze-slider-3">
+								<div class="blaze-container">
+									<div class="blaze-track-container">
+										<div class="blaze-track">
+							<div
+								class="carousel-item bg-white w-48 h-28 p-6 text-sm rounded-none border border-solid border-base-100 border-1 flex-col"
+							>
+								<p
+									class="text-xs uppercase font-spacemono text-secondary"
+								>
+								Admin</p>
+								<p>eCommerce product upload</p>
+							</div>
+							<div
+								class="carousel-item bg-white w-48 h-28 p-6 text-sm rounded-none border border-solid border-base-100 border-1 flex-col"
+							>
+								<p
+									class="text-xs uppercase font-spacemono text-secondary"
+								>
+									Development</p>
+								</p>Website & app development
+							</div>
+							<div
+								class="carousel-item bg-white w-48 h-28 p-6 text-sm rounded-none border border-solid border-base-100 border-1 flex-col"
+							>
+								<p
+									class="text-xs uppercase font-spacemono text-secondary"
+								>
+									Tech</p>
+								</p>Troubleshooting website issues
+							</div>
+							<div
+								class="carousel-item bg-white w-48 h-28 p-6 text-sm rounded-none border border-solid border-base-100 border-1 flex-col"
+							>
+								Item 10
+							</div>
+						</div>
+						</div>
+					</div>
+				</div>
+						</div>
+					</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- Section 4 -->
+
+		<section class="bg-accent text-neutral-content">
+			<div class="container mx-auto flex flex-wrap items-center py-20">
+				<!-- Placeholder Image -->
+				<div class="w-full md:w-1/2 p-5">
+					<div
+						class="bg-neutral h-96 flex items-center justify-center"
+					>
+						Placeholder image
+					</div>
+				</div>
+				<!-- Content -->
+				<div class="w-full md:w-1/2 p-5">
+					<h3 class="text-6xl font-bold font-neuebit text-primary">
+						Order tasks from <span class="font-mondwest text-5xl text-base-100">The Counter</span>
+					</h3>
+					<p class="py-4 font-spacemono">
+						PixelBrew’s in-house project management web app
+					</p>
+					<p class="pb-2">
+						I’ve tried a lot of project management apps over the
+						years, and I could never stick with one.
+					</p>
+					<p class="pb-2 text-base-100">
+						So I made my own! It's called <strong
+							>The Counter</strong
+						> (get it, like ordering coffee at the counter? <i>groans... more coffee puns?</i>), and it's a project management web app
+						that I built from the ground up to help me manage my client
+						work. It's designed to be simple, flexible, and easy to use,
+						and it's the perfect tool for managing your tasks and projects,
+						viewing your invoices, and communicating with me.
+					</p>
+					<p>
+						It's the hub for everything we do together, and it's the
+						best way to ensure that we're always on the same page.
+					</p>
+					<button class="btn btn-secondary mt-4">Get Started</button>
+				</div>
+			</div>
+		</section>
+
+			<!-- CTA Section -->
+			<div class="bg-neutral flex flex-col items-center">
+			<section
+				class="cta container flex flex-row bg-neutral text-neutral-content p-10 gap-8"
+			>
+			<div class="w-full md:w-1/2">
+				<h2 class="text-6xl font-bold font-neuebit text-primary">
+					Frequently Asked Questions
+				</h2>
+				<p class="py-6 text-secondary font-spacemono">
+					Wondering how this whole thing works? Check out these FAQ's.
+					
+						Have a question that's not answered here? Click the little chat icon
+					in the bottom corner and let's talk!
+				</p>
+				<button class="btn btn-accent">Get Started</button>
+				</div>
+				<div class="w-full md:w-1/2">
+			<div
+				class="collapse collapse-arrow bg-neutral border rounded-none border-b-0 border-base-100 border-solid mt-4"
+			>
+				<input type="radio" name="my-accordion-2" />
+				<div class="collapse-title">How does it work?</div>
+				<div class="collapse-content">
+					<p>You request a task, and I get it done! It's pretty simple. There are no
+						long-term contracts or minimum hourly requirements. First, you'll sign 
+						up through this form on my website. I'll get you onboarded and set up in 
+						The Counter - Pixel Brew's task management app - and then you can get 
+						started requesting tasks!
+					</p>
+				</div>
+			</div>
+			<div
+				class="collapse collapse-arrow bg-neutral border rounded-none border-b-0 border-base-100 border-solid"
+			>
+				<input type="radio" name="my-accordion-2" />
+				<div class="collapse-title">How much does it cost?</div>
+				<div class="collapse-content">
+					<p>I charge $40 an hour, billed in 15 minute increments.</p>
+				</div>
+			</div>
+			<div
+			class="collapse collapse-arrow bg-neutral border rounded-none border-b-0 border-base-100 border-solid"
+			>
+				<input type="radio" name="my-accordion-2" />
+				<div class="collapse-title">What's your turnaround time?</div>
+				<div class="collapse-content">
+					<p>Generally you can expect your task to be completed within 24-48 hours,
+						but this is highly dependent on the task at hand. I'll be sure to give
+						you a clear estimate on how long it will take, which you'll be able 
+						to keep track of in The Counter.
+					</p>
+				</div>
+			</div>
+			<div
+				class="collapse collapse-arrow bg-neutral border rounded-none border-1 border-base-100 border-solid"
+			>
+				<input type="radio" name="my-accordion-2" />
+				<div class="collapse-title">What kind of tasks can you do?</div>
+				<div class="collapse-content">
+					<p><a href="/services">Click here</a> to see a full list of the things I do, along with some 
+						examples of services that I don't offer.
+					</p>
+				</div>
+			</div>
+			</div>
+		</section>
+	</div>
+		<script>
+import BlazeSlider from 'blaze-slider';
+
+// Initialize the first slider without delay
+const slider1 = document.querySelector('.blaze-slider-1');
+new BlazeSlider(slider1, {
+  all: {
+	slidesToShow: 3,
+		enableAutoplay: true,
+		transitionDuration: 750,
+		autoplayInterval: 9000,
+		slideGap: '20px',
+  },
+});
+
+// Function to initialize the second slider
+function initializeSlider2() {
+  const slider2 = document.querySelector('.blaze-slider-2');
+  new BlazeSlider(slider2, {
+	all: {
+		slidesToShow: 3,
+		transitionDuration: 750,
+		enableAutoplay: true,
+		autoplayInterval: 9000,
+		autoplayDirection: 'to right',
+		slideGap: '20px',
+	},
+  });
+}
+
+// Function to initialize the third slider
+function initializeSlider3() {
+  const slider3 = document.querySelector('.blaze-slider-3');
+  new BlazeSlider(slider3, {
+	all: {
+		slidesToShow: 3,
+		transitionDuration: 750,
+		enableAutoplay: true,
+		autoplayInterval: 9000,
+		slideGap: '20px',
+	},
+  });
+}
+
+// Set timeouts for the second and third sliders
+setTimeout(initializeSlider2, 3000); // 3000ms delay for the second slider
+setTimeout(initializeSlider3, 6000); // 6000ms delay for the third slider
+
+// duplicate marquee text
+window.addEventListener('DOMContentLoaded', (event) => {
+    const marqueeText = document.querySelector('.marquee-text');
+    const content = marqueeText.innerHTML;
+    const repetitions = 6; // Number of times the text should repeat
+
+    for (let i = 1; i < repetitions; i++) {
+      marqueeText.innerHTML += content;
+    }
+  });
+		</script>
+	</body>
+</html>

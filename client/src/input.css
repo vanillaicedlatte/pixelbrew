@@ -1,0 +1,20 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+  @font-face {
+	font-family: 'Neue Bit';
+	src: url('./assets/PPNeueBit-Bold.otf') format('opentype');
+  }
+
+  @font-face {
+	font-family: 'Mondwest';
+	src: url('./assets/PPMondwest-Regular.otf') format('opentype');
+  }
+
+  .btn {
+    @apply rounded-full px-8 py-0 font-spacemono font-normal;
+  }
+

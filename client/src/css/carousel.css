@@ -1,0 +1,60 @@
+  .slider {
+    height: 100px;
+    position: relative;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+  
+  .slider::before,
+  .slider::after {
+    position: absolute;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), #F7EFEA 100%);
+    content: '';
+    height: 100%;
+    width: 5%;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  .slider::before {
+    left: 0;
+    top: 0;
+  }
+  
+  .slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+  
+  .slide-track {
+    width: calc(150px * 20); /* Adjust this value based on the number of logos (10 original + 10 duplicates) and their width */
+    display: flex;
+    animation: scroll 100s linear infinite; /* Adjust the animation duration based on the number of logos */
+    justify-content: space-between;
+  }
+  
+  .slide {
+    width: 75px; /* Adjust this value to fit your logo sizes */
+    height: 75px; /* Adjust this value to fit your logo sizes */
+    display: grid;
+    place-items: center;
+    transition: 0.5s;
+    cursor: pointer;
+    margin: 0 25px; /* Add margin to increase spacing between logos */
+  }
+  
+  .slide:hover {
+    transform: scale(0.8);
+  }
+  
+  @keyframes scroll {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(calc(-150px * 10)); /* Adjust this value based on the number of original logos (10) */
+    }
+  }
