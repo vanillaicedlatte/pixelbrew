@@ -13,8 +13,8 @@ module.exports = {
   theme: {
 		extend: {
 			backgroundImage: {
-				'coffee-stain': "url('./src/assets/coffeestain_bg.jpg')",
-				'woman-typing': "url('./src/assets/woman-typing.jpg')",
+				'coffee-stain': "url('/src/assets/coffeestain_bg.jpg')",
+				'woman-typing': "url('/src/assets/woman-typing.jpg')",
 			},
 			width: {
 				72: "18rem",
