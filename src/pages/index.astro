@@ -112,7 +112,7 @@ import 'blaze-slider/dist/blaze.css'
 			<div class="py-1 flex items-center justify-center w-full gap-4 marquee-text">
 			<h2 class="text-3xl font-bold font-neuebit text-base-100 uppercase mt-1">
 				<span class="text-primary">Launch Special! </span> 
-				FREE 1 hour consultation call</h2>
+				First hour FREE</h2>
 				<a href="#"><button class="text-md text-base-100 font-spacemono">Details →</button></a>
 			</div>
 		</section>
@@ -525,42 +525,45 @@ import 'blaze-slider/dist/blaze.css'
 import BlazeSlider from 'blaze-slider';
 
 // Initialize the first slider without delay
-const slider1 = document.querySelector('.blaze-slider-1');
+const slider1 = document.querySelector('.blaze-slider-1')  as HTMLElement;
 new BlazeSlider(slider1, {
   all: {
 	slidesToShow: 3,
 		enableAutoplay: true,
-		transitionDuration: 750,
+		transitionDuration: 1000,
 		autoplayInterval: 9000,
 		slideGap: '20px',
+		transitionTimingFunction: 'cubic-bezier(.18,.74,.2,1.27)',
   },
 });
 
 // Function to initialize the second slider
 function initializeSlider2() {
-  const slider2 = document.querySelector('.blaze-slider-2');
-  new BlazeSlider(slider2, {
-	all: {
-		slidesToShow: 3,
-		transitionDuration: 750,
-		enableAutoplay: true,
-		autoplayInterval: 9000,
-		autoplayDirection: 'to right',
-		slideGap: '20px',
+	const slider2 = document.querySelector('.blaze-slider-2') as HTMLElement;
+	new BlazeSlider(slider2, {
+		all: {
+			slidesToShow: 3,
+				transitionDuration: 1000,
+				enableAutoplay: true,
+				autoplayInterval: 9000,
+				autoplayDirection: 'to right',
+				slideGap: '20px',
+				transitionTimingFunction: 'cubic-bezier(.18,.74,.2,1.27)',
 	},
   });
 }
 
 // Function to initialize the third slider
 function initializeSlider3() {
-  const slider3 = document.querySelector('.blaze-slider-3');
+  const slider3 = document.querySelector('.blaze-slider-3') as HTMLElement;
   new BlazeSlider(slider3, {
 	all: {
 		slidesToShow: 3,
-		transitionDuration: 750,
+		transitionDuration: 1000,
 		enableAutoplay: true,
 		autoplayInterval: 9000,
 		slideGap: '20px',
+		transitionTimingFunction: 'cubic-bezier(.18,.74,.2,1.27)',
 	},
   });
 }
@@ -572,13 +575,15 @@ setTimeout(initializeSlider3, 6000); // 6000ms delay for the third slider
 // duplicate marquee text
 window.addEventListener('DOMContentLoaded', (event) => {
     const marqueeText = document.querySelector('.marquee-text');
-    const content = marqueeText.innerHTML;
-    const repetitions = 6; // Number of times the text should repeat
+    if (marqueeText !== null) {
+        const content = marqueeText.innerHTML;
+        const repetitions = 6; // Number of times the text should repeat
 
-    for (let i = 1; i < repetitions; i++) {
-      marqueeText.innerHTML += content;
+        for (let i = 1; i < repetitions; i++) {
+            marqueeText.innerHTML += content;
+        }
     }
-  });
+});
 		</script>
 	</body>
 </html>
