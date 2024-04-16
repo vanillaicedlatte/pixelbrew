@@ -19,15 +19,16 @@ let isOpen = false; // Keep any Astro component logic here
   };
 
   // Close the menu when clicking outside of it
-  const closeMenuOnClickOutside = (event) => {
-    const menu = document.querySelector('.mobile-menu');
-    const menuButton = document.querySelector('.menu-icon'); // Assuming your menu button has a class 'menu-icon'
-    if (menu && !menu.contains(event.target) && !menuButton.contains(event.target)) {
+  // Close the menu when clicking outside of it
+  const closeMenuOnClickOutside = (event: MouseEvent) => {
+  const menu = document.querySelector('.mobile-menu');
+  const menuButton = document.querySelector('.menu-icon');
+    if (menu && menuButton && !menu.contains(event.target as Node) && !menuButton.contains(event.target as Node)) {
       isOpen = false;
       menu.classList.add('translate-x-full');
       menu.classList.remove('translate-x-0');
-    }
-  };
+    } 
+};
 
   document.addEventListener('DOMContentLoaded', (event) => {
     const menuIcon = document.querySelector('.menu-icon');
@@ -52,10 +53,9 @@ let isOpen = false; // Keep any Astro component logic here
   <!-- Menu Items -->
   <nav class="mt-12 font-spacemono">
     <ul>
-      <li><a href="/" class="block p-4 text-black">Home</a></li>
-      <li><a href="/about" class="block p-4 text-black">About</a></li>
-      <li><a href="/services" class="block p-4 text-black">Services</a></li>
-      <li><a href="/contact" class="block p-4 text-black">Contact</a></li>
+      <li><a href="/" class="block p-4 text-black hover:text-secondary">Home</a></li>
+      <li><a href="/about" class="block p-4 text-black hover:text-secondary">About</a></li>
+      <li><a href="/services" class="block p-4 text-black hover:text-secondary">Services</a></li>
     </ul>
   </nav>
 </div>
