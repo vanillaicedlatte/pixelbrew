@@ -13,6 +13,7 @@ import lookerLogo from "../assets/logos/looker.png";
 import flodeskLogo from "../assets/logos/flodesk.png";
 import Header from '../components/Header.astro';
 import 'blaze-slider/dist/blaze.css'
+import theCounterSS from '../assets/thecounter_ss.png';
 
 ---
 
@@ -422,7 +423,8 @@ import 'blaze-slider/dist/blaze.css'
 			<div class="container mx-auto flex flex-wrap items-center py-20">
 				<div class="w-full lg:w-1/2 p-5">
 					<div class="full-width-image-container drop-shadow-lg rounded overflow-hidden">
-						<img src="/src/assets/thecounter_ss.png" alt="The Counter Screenshot" />
+						<img src={theCounterSS.src} alt="The Counter Screenshot" />
+
 					</div>
 				</div>
 				<!-- Content -->
