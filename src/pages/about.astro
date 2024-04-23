@@ -14,20 +14,82 @@ import jamieHeadshot from '../assets/jamie-headshot.jpg'
     <Header />
     <section class="bg-neutral">
         <div class="container mx-auto py-16">
-            <div class="w-full flex flex-row ">
-            <div class="basis-1/4 text-base-100">
-                <div class="w-full">
-                    <img src={jamieHeadshot.src}>
+            <div class="w-full flex flex-row gap-8">
+            <div class="basis-80 grow-0 shrink-0 text-base-100">
+                <div class="flex gap-4 items-center">
+                
+                <div class="avatar w-24">
+                    <img class="rounded-full" src={jamieHeadshot.src}>
                 </div>
-                <h1 class="text-4xl font-bold text-primary font-neuebit leading-[2rem]">Experience</h1>
-            <p>Here's a brief overview of my professional journey.</p>
+                <div>
+                    <p>Jamie Spann</p>
+                    <p>Solo Developer</p>
+                    <p>Owner @ Pixel Brew</p>
+                </div>
+                </div>
+                <h2 class="text-2xl font-bold text-primary font-neuebit leading-[2rem] pt-4">Education</h2>
+                <ul class="list-disc pl-5">
+                    <li><p class="text-sm font-bold">Bachelors of Science in Anthropology</p>
+                        <p class="text-xs">Troy University c/o 2016</p>
+                    </li>
+                </ul>
+                <h2 class="text-2xl font-bold text-primary font-neuebit leading-[2rem] pt-4">Experience</h2>
+            <p>A brief overview of my professional journey.</p>
             <ul class="list-disc pl-5">
-                <li>Senior Web Developer at PixelBrew - Jan 2020 - Present</li>
-                <li>Web Developer at TechSolutions - Jun 2017 - Dec 2019</li>
-                <!-- Add more experiences as needed -->
+                <li><p class="text-sm font-bold">Owner</p>
+                    <p class="text-xs">Pixel Brew</p>
+                    <p class="text-xs">Jan 2024 - Present</p>
+                </li>
+                <li><p class="text-sm font-bold">Virtual Tech Assistant</p>
+                    <p class="text-xs">Virtual Assistant Agency</p>
+                    <p class="text-xs">Jul 2022 - Sep 2023 · 1 yr 3 mos</p>
+                </li>
+                <li><p class="text-sm font-bold">Self-Employed</p>
+                    <p class="text-xs">Digital Swan - Digital Marketing Agency</p>
+                    <p class="text-xs">Jul 2020 - Jun 2022 · 2 yrs</p>
+                </li>
+                <li><p class="text-sm font-bold">Creative Director & Lead Web Developer</p>
+                    <p class="text-xs">Digital Marketing Agency</p>
+                    <p class="text-xs">Jul 2017 - Jul 2020 · 3 yrs 1 mos</p>
+                </li>
+            </ul>
+            <h2 class="text-2xl font-bold text-primary font-neuebit leading-[2rem] pt-4">Skills</h2>
+            <ul class="list-disc pl-5 text-sm">
+                <li><span class="font-bold">Languages:</span> HTML, CSS, Javascript, Typescript, PHP
+                </li>
+                <li><span class="font-bold">Frameworks:</span> React, Astro, Svelte, Wordpress
+                </li>
+                <li><span class="font-bold">Builders:</span> Elementor, Divi, Breakdance, Oxygen, Bricks, Squarespace, Wix
+                </li>
+                <li><span class="font-bold">eCommerce:</span> Shopify, Woocommerce
+                </li>
+                <li><span class="font-bold">Automation:</span> Zapier, Make.com, Keap
+                </li>
+                <li><span class="font-bold">Design:</span> Figma, Adobe Illustrator, Canva
+                </li>
+                <li><span class="font-bold">Databases:</span> MongoDB
+                </li>
+                <li><span class="font-bold">Email Platforms:</span> ActiveCampaign, Mailchimp, Flodesk, Constant Contact, ConvertKit</li>
+                <li><span class="font-bold">Other:</span> APIs, Google Analytics, Looker Studio
+                </li>
+            </ul>
+            <h2 class="text-2xl font-bold text-primary font-neuebit leading-[2rem] pt-4">Projects</h2>
+            <ul class="list-disc pl-5">
+                <li><p class="text-sm font-bold">The Counter</p>
+                    <p class="text-xs">Client task management app for Pixel brew.</p>
+                    <p class="text-xs"><span class="font-bold">Stack:</span> React, Express, MongoDB, Typescript, Tailwind, DaisyUI, Tanstack Router & Query, Websockets</p>
+                </li>
+                <li><p class="text-sm font-bold">Pixel Brew Website</p>
+                    <p class="text-xs">Website for Pixel Brew</p>
+                    <p class="text-xs"><span class="font-bold">Stack:</span> Astro, Tailwind, DaisyUI, Vite</p>
+                </li>
+                <li><p class="text-sm font-bold">StarNotes</p>
+                    <p class="text-xs">A note taking app that stores the astrological data for the moment.</p>
+                    <p class="text-xs"><span class="font-bold">Stack:</span> React, Express, MongoDB, Javascript, Tailwind, DaisyUI</p>
+                </li>
             </ul>
             </div>
-            <div class="basis-3/4 text-base-100">
+            <div class="text-base-100 grow">
                 <h2 class="text-primary text-4xl font-neuebit">About Me</h2>
                 <p class="pb-2">Hi! I'm Jamie, a web developer from south Alabama with 7 years of professional experience in the digital space. I've worn many hats – developer, designer, creative director, and entrepreneur –  and honed skills in programming, design, and project management along the way.</p>
 
