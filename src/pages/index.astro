@@ -24,6 +24,12 @@ import theCounterSS from '../assets/thecounter_ss.png';
 		width: 100vw;
 	}
 
+	.body-wrapper {
+		overflow-x: hidden;
+		width: 100vw;
+		position: relative;
+	}
+
 	.carousel-row {
   display: flex;
   overflow-x: auto;
@@ -108,6 +114,7 @@ import theCounterSS from '../assets/thecounter_ss.png';
 		<title>PixelBrew - Virtual Tech Assistance</title>
 	</head>
 	<body class="font-sans bg-gray-50 overflow-x-hidden">
+		<div class="body-wrapper">
 		<Header />
 
 		<section class="bg-accent marquee-container">
