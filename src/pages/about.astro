@@ -12,7 +12,13 @@ import jamieHeadshot from '../assets/jamie-headshot.jpg'
 </head>
 <body class="font-sans bg-gray-50 overflow-x-hidden">
     <Header />
-    <section class="bg-neutral">
+    <div class="bg-base-100 flex items-center justify-center">
+        <section class="container mx-auto px-8 lg:px-0 py-16">
+            <h1 class="text-5xl lg:text-6xl w-full lg:w-1/3 text-primary font-neuebit leading-[2rem]">About</h1>
+            <div class="flex flex-wrap"><a href="#professional">Professional History</a> <a href="#aboutpb">About Pixel Brew</a> <a href="#aboutme">About Me</a></div>
+        </section>
+        </div>
+    <section class="bg-neutral" id="professional">
         <div class="container mx-auto lg:py-16">
             <div class="w-full flex flex-row gap-8 flex-wrap lg:flex-nowrap p-8 lg:p-0">
             <div class="w-full lg:basis-80 grow-0 shrink-0 text-base-100 bg-white p-8 border border-1 border-base-100">
@@ -90,12 +96,12 @@ import jamieHeadshot from '../assets/jamie-headshot.jpg'
             </ul>
             </div>
             <div class="text-base-100">
-                <div class="bg-white p-8 border border-1 border-base-100">
+                <div class="bg-white p-8 border border-1 border-base-100" id="aboutpb">
                 <h2 class="text-primary text-4xl font-neuebit">About Pixel Brew</h2>
                 <p class="pb-2">Pixel Brew is a virtual tech assistant service designed to boost your efficiency. I handle a variety of tasks, from website maintenance to project management, so you can spend less time on tech headaches and more time achieving your goals.</p>
                 <p>My goal is to offer digital services on a task-based system, billed by the hour in 15 minute incremets, utilizing a custom build task management platform, known as The Counter.</p>
                 </div>
-                <div class="bg-white border border-1 border-base-100 p-8 grow mt-8">
+                <div class="bg-white border border-1 border-base-100 p-8 grow mt-8" id="aboutme">
                 <h2 class="text-primary text-4xl font-neuebit">About Me</h2>
                 <p class="pb-2">Hi! I'm Jamie, a web developer from south Alabama with 7 years of professional experience in the digital space. I've worn many hats – developer, designer, creative director, and entrepreneur –  and honed skills in programming, design, and project management along the way.</p>
 

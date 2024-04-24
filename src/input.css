@@ -18,3 +18,8 @@
     @apply rounded-full px-8 py-0 font-spacemono font-normal;
   }
 
+  .body-wrapper {
+		overflow-x: hidden;
+		width: 100vw;
+		position: relative;
+	}
