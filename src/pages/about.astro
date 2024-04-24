@@ -13,18 +13,18 @@ import jamieHeadshot from '../assets/jamie-headshot.jpg'
 <body class="font-sans bg-gray-50 overflow-x-hidden">
     <Header />
     <section class="bg-neutral">
-        <div class="container mx-auto py-16">
-            <div class="w-full flex flex-row gap-8">
-            <div class="basis-80 grow-0 shrink-0 text-base-100">
+        <div class="container mx-auto lg:py-16">
+            <div class="w-full flex flex-row gap-8 flex-wrap lg:flex-nowrap p-8 lg:p-0">
+            <div class="w-full lg:basis-80 grow-0 shrink-0 text-base-100 bg-white p-4 rounded">
                 <div class="flex gap-4 items-center">
                 
                 <div class="avatar w-24">
                     <img class="rounded-full" src={jamieHeadshot.src}>
                 </div>
                 <div>
-                    <p>Jamie Spann</p>
-                    <p>Solo Developer</p>
-                    <p>Owner @ Pixel Brew</p>
+                    <p class="text-2xl text-primary font-neuebit leading-[2rem]">Jamie Spann</p>
+                    <p class="text-xs font-bold">Solo Developer</p>
+                    <p class="text-xs">Owner @ Pixel Brew</p>
                 </div>
                 </div>
                 <h2 class="text-2xl font-bold text-primary font-neuebit leading-[2rem] pt-4">Education</h2>
@@ -89,7 +89,13 @@ import jamieHeadshot from '../assets/jamie-headshot.jpg'
                 </li>
             </ul>
             </div>
-            <div class="text-base-100 grow">
+            <div class="text-base-100">
+                <div class="bg-white rounded p-4">
+                <h2 class="text-primary text-4xl font-neuebit">About Pixel Brew</h2>
+                <p class="pb-2">Pixel Brew is a virtual tech assistant service designed to boost your efficiency. I handle a variety of tasks, from website maintenance to project management, so you can spend less time on tech headaches and more time achieving your goals.</p>
+                <p>My goal is to offer digital services on a task-based system, billed by the hour in 15 minute incremets, utilizing a custom build task management platform, known as The Counter.</p>
+                </div>
+                <div class="bg-white rounded p-4 grow mt-8">
                 <h2 class="text-primary text-4xl font-neuebit">About Me</h2>
                 <p class="pb-2">Hi! I'm Jamie, a web developer from south Alabama with 7 years of professional experience in the digital space. I've worn many hats – developer, designer, creative director, and entrepreneur –  and honed skills in programming, design, and project management along the way.</p>
 
@@ -104,6 +110,7 @@ import jamieHeadshot from '../assets/jamie-headshot.jpg'
                 <p class="pb-2">On a personal note, I'd describe myself as something of an introvert and homebody at heart. When I'm not hanging out with my 11 year old son, Liam, or cozied up reading books on culture, astrology, or just the latest good fiction release, I love getting out and exploring new restaurants and frequent thrift and antique shops, iced coffee or honeydew boba (my favorite) in hand. I also love binging my favorite TV shows or playing Stardew Valley. Traveling is a passion of mine as well, and I have lots of upcoming plans to get out and see the world. My favorite destinations I’ve visited so far are Jamaica, Los Angeles, and New Orleans. My next dream destinations are New York City and Paris.</p>
 
                 <p class="pb-2">So, that’s pretty much it about me. Pretty windy for someone who doesn’t like talking about herself. :) If you’d like to chat, you can email me at jamie@pixelbrew.co or hit the little chat icon in the bottom right corner of this website. I’d love to meet you!</p>
+                </div>
             </div>
             </div>
         </div>
