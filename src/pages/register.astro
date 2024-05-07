@@ -18,65 +18,78 @@ import Header from '../components/Header.astro';
         </section>
         </div>
     <section class="bg-neutral" id="professional">
-        <div class="container mx-auto lg:py-16 text-base-100">
+        <div class="container mx-auto text-base-100 pt-8 text-center">
             Sign up below to get started requesting tasks!
         </div>
-        <div class="container mx-auto lg:py-16 text-base-100">
+        <div class="container mx-auto text-base-100 w-full lg:w-1/2">
             <form action="/submit" method="post" class="container mx-auto px-8 lg:px-0 py-8">
-                <div class="grid grid-cols-2 gap-4">
+                <div class="grid grid-cols-2 gap-4 pb-2">
                     <div>
-                        <label for="firstName">First Name</label>
-                        <input type="text" id="firstName" name="firstName" required class="input" />
+                        <label class="flex flex-col" for="firstName">First Name
+                        <input type="text" id="firstName" name="firstName" required class="input input-bordered input-ghost rounded-none border-solid border-1 border-base-100 bg-white focus:border-secondary focus:text-base-100"/>
+                        </label>
                     </div>
                     <div>
-                        <label for="lastName">Last Name</label>
-                        <input type="text" id="lastName" name="lastName" required class="input" />
-                    </div>
-                </div>
-
-                <label for="businessName">Business Name</label>
-                <input type="text" id="businessName" name="businessName" required class="input" />
-
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required class="input" />
-                    </div>
-                    <div>
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone" required class="input" />
+                        <label class="flex flex-col" for="lastName">Last Name
+                        <input type="text" id="lastName" name="lastName" required class="input input-bordered input-ghost rounded-none border-solid border-1 border-base-100 bg-white focus:border-secondary focus:text-base-100" />
+                    </label>
                     </div>
                 </div>
 
-                <label for="website">Website</label>
-                <input type="url" id="website" name="website" class="input" />
+                <label class="flex flex-col pb-2" for="businessName">Business Name
+                <input type="text" id="businessName" name="businessName" class="input input-bordered input-ghost rounded-none border-solid border-1 border-base-100 bg-white focus:border-secondary focus:text-base-100" />
+            </label>
+                <div class="grid grid-cols-2 gap-4 pb-2">
+                    <div>
+                        <label class="flex flex-col" for="email">Email
+                        <input type="email" id="email" name="email" class="input input-bordered input-ghost rounded-none border-solid border-1 border-base-100 bg-white focus:border-secondary focus:text-base-100" />
+                    </label>
+                    </div>
+                    <div>
+                        <label class="flex flex-col" for="phone">Phone
+                        <input type="tel" id="phone" name="phone" class="input input-bordered input-ghost rounded-none border-solid border-1 border-base-100 bg-white focus:border-secondary focus:text-base-100" />
+                    </label>
+                    </div>
+                </div>
 
-                <label for="lineOfBusiness">What is your line of business?</label>
-                <input type="text" id="lineOfBusiness" name="lineOfBusiness" required class="input" />
+                <label class="flex flex-col pb-2" for="website">Website
+                <input type="url" id="website" name="website" class="input input-bordered input-ghost rounded-none border-solid border-1 border-base-100 bg-white focus:border-secondary focus:text-base-100" />
+            </label>
 
-                <label for="tasksInterest">What kinds of tasks are you interested in having completed?</label>
-                <input type="text" id="tasksInterest" name="tasksInterest" required class="input" />
+                <label class="flex flex-col pb-2" for="lineOfBusiness">What is your line of business?
+                <textarea type="text" id="lineOfBusiness" name="lineOfBusiness" required class="textarea textarea-bordered textarea-ghost rounded-none border-solid border-1 border-base-100 bg-white focus:border-secondary focus:text-base-100"></textarea>
+            </label>
 
-                <label for="requestFrequency">How often do you see yourself requesting tasks?</label>
-                <select id="requestFrequency" name="requestFrequency" class="input">
+                <label class="flex flex-col pb-2" for="tasksInterest">What kinds of tasks are you interested in having completed? <span class="text-xs pb-1">You do not have to go into task details, just a broad overview or example.</span>
+                <textarea type="text" id="tasksInterest" name="tasksInterest" required class="textarea textarea-bordered textarea-ghost rounded-none border-solid border-1 border-base-100 bg-white focus:border-secondary focus:text-base-100"></textarea>
+            </label>
+
+                <label class="flex flex-col pb-2" for="requestFrequency">How often do you see yourself requesting tasks?
+                <select id="requestFrequency" name="requestFrequency" class="select select-bordered select-ghost rounded-none border-solid border-1 border-base-100 bg-white focus:border-secondary focus:text-base-100">
+                    <option>Select an option</option>
                     <option value="testing">Just testing this out for now</option>
                     <option value="daily">Daily</option>
                     <option value="weekly">Weekly</option>
                     <option value="monthly">A few times a month</option>
                 </select>
+            </label>
 
-                <label for="communicationMethod">What is your preferred method of communication?</label>
-                <select id="communicationMethod" name="communicationMethod" class="input">
+                <label class="flex flex-col pb-2" for="communicationMethod">What is your preferred method of communication?
+                <select id="communicationMethod" name="communicationMethod" class="select select-bordered select-ghost rounded-none border-solid border-1 border-base-100 bg-white focus:border-secondary focus:text-base-100">
+                    <option>Select an option</option>
                     <option value="email">Email</option>
                     <option value="text">Text</option>
                 </select>
+            </label>
 
-                <label for="introMeeting">Would you like to set up an introductory Zoom meeting?</label>
-                <select id="introMeeting" name="introMeeting" class="input">
+                <label class="flex flex-col" for="introMeeting">Would you like to set up an introductory Zoom meeting?
+                    <span class="text-xs pb-1"> Totally optional, but we can introduce ourselves and I can get to know a little more about your business needs.</span>
+                <select id="introMeeting" name="introMeeting" class="select select-bordered select-ghost rounded-none border-solid border-1 border-base-100 bg-white focus:border-secondary focus:text-base-100">
+                    <option>Select an option</option>
                     <option value="yes">Yes</option>
                     <option value="no">Not at this time</option>
                 </select>
-
+            </label>
                 <button type="submit" class="btn btn-primary mt-4">Submit</button>
             </form>
         </div>
