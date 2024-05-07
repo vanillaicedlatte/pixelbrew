@@ -22,7 +22,7 @@ import Header from '../../components/Header.astro';
             Sign up below to get started requesting tasks!
         </div>
         <div class="container mx-auto text-base-100 w-full lg:w-1/2">
-            <form name="registerForm" netlify action="https://pixelbrew.co/register/success/" class="container mx-auto px-8 lg:px-0 py-8">
+            <form name="registerForm" netlify netlify-honeypot action="https://pixelbrew.co/register/success/" class="container mx-auto px-8 lg:px-0 py-8">
                 <div class="grid grid-cols-2 gap-4 pb-2">
                     <div>
                         <label class="flex flex-col" for="firstName">First Name
@@ -57,11 +57,11 @@ import Header from '../../components/Header.astro';
             </label>
 
                 <label class="flex flex-col pb-2" for="lineOfBusiness">What is your line of business?
-                <textarea type="text" id="lineOfBusiness" name="lineOfBusiness" required class="textarea textarea-bordered textarea-ghost rounded-none border-solid border-1 border-base-100 bg-white focus:border-secondary focus:text-base-100"></textarea>
+                <textarea id="lineOfBusiness" name="lineOfBusiness" required class="textarea textarea-bordered textarea-ghost rounded-none border-solid border-1 border-base-100 bg-white focus:border-secondary focus:text-base-100"></textarea>
             </label>
 
                 <label class="flex flex-col pb-2" for="tasksInterest">What kinds of tasks are you interested in having completed? <span class="text-xs pb-1">You do not have to go into task details, just a broad overview or example.</span>
-                <textarea type="text" id="tasksInterest" name="tasksInterest" required class="textarea textarea-bordered textarea-ghost rounded-none border-solid border-1 border-base-100 bg-white focus:border-secondary focus:text-base-100"></textarea>
+                <textarea id="tasksInterest" name="tasksInterest" required class="textarea textarea-bordered textarea-ghost rounded-none border-solid border-1 border-base-100 bg-white focus:border-secondary focus:text-base-100"></textarea>
             </label>
 
                 <label class="flex flex-col pb-2" for="requestFrequency">How often do you see yourself requesting tasks?
@@ -98,7 +98,6 @@ import Header from '../../components/Header.astro';
     <script>
         const form = document.querySelector('form[name="registerForm"]');
         form?.addEventListener('submit', function(event) {
-          event.preventDefault();
       
           // Disable the submit button (assuming it exists)
           const submitButton = form.querySelector('button[type="submit"]');
