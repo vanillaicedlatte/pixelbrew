@@ -1,5 +1,5 @@
 ---
-import Header from '../components/Header.astro';
+import Header from '../../components/Header.astro';
 ---
 
 <html lang="en">
@@ -96,18 +96,30 @@ import Header from '../components/Header.astro';
     </section>
     <script>
         const registerForm = document.getElementById('registerForm') as HTMLFormElement;
-            if (registerForm) {
+        if (registerForm) {
+            let formSubmitted = false;
+            registerForm.addEventListener('submit', (event) => {
+                event.preventDefault(); // Prevent the default form submission behavior
                 fetch('https://hook.us1.make.com/wg9wyxh8tiigco9p5e1bwsq8aerbu899', {
                     method: 'POST',
                     body: new FormData(registerForm)
                 })
                 .then(response => {
-                    window.location.href = 'https://pixelbrew.co/register/success';
+                    formSubmitted = true; // Set the flag to true upon successful form submission
+                    // Additional success handling if needed
                 })
                 .catch(error => {
                     console.error('Error submitting form:', error);
                 });
-            }
+            });
+
+            // Redirect only if the form has been successfully submitted
+            window.addEventListener('load', () => {
+                if (formSubmitted) {
+                    window.location.href = 'https://pixelbrew.co/register/success';
+                }
+            });
+        }
     </script>
     <script src="//code.tidio.co/tdv8h5nvfvmunnpiatdnog3kzoprjp4w.js" async></script>
 </body>
