@@ -22,7 +22,7 @@ import Header from '../../components/Header.astro';
             Sign up below to get started requesting tasks!
         </div>
         <div class="container mx-auto text-base-100 w-full lg:w-1/2">
-            <form id="registerForm" action="https://hook.us1.make.com/wg9wyxh8tiigco9p5e1bwsq8aerbu899" method="post" class="container mx-auto px-8 lg:px-0 py-8">
+            <form name="registerForm" action="https://hook.us1.make.com/wg9wyxh8tiigco9p5e1bwsq8aerbu899" netlify class="container mx-auto px-8 lg:px-0 py-8">
                 <div class="grid grid-cols-2 gap-4 pb-2">
                     <div>
                         <label class="flex flex-col" for="firstName">First Name
@@ -94,42 +94,6 @@ import Header from '../../components/Header.astro';
             </form>
         </div>
     </section>
-        <script>
-            const registerForm = document.getElementById('registerForm') as HTMLFormElement;
-            let formSubmitted = false;
-    
-            if (registerForm) {
-                registerForm.addEventListener('submit', (event) => {
-                    event.preventDefault();
-    
-                    try {
-                        fetch('https://hook.us1.make.com/wg9wyxh8tiigco9p5e1bwsq8aerbu899', {
-                            method: 'POST',
-                            body: new FormData(registerForm)
-                        })
-                        .then(response => {
-                            if (response.ok) {
-                                formSubmitted = true;
-                                window.location.href = 'https://pixelbrew.co/register/success';
-                            } else {
-                                // Handle unsuccessful form submission
-                                console.error('Form submission failed', response);
-                                // Display a suitable error message to the user 
-                            }
-                        })
-                        .catch((error: Error) => {
-                            console.error('Error submitting form:', error);
-                            // Display a suitable error message to the user
-                        }); 
-                    } catch (error) {
-                        console.error('Error in form submission:', error);
-                        // Display a suitable error message to the user
-                    }
-                });
-            } else {
-                console.error('Form element not found!');
-            }
-        </script>
     <script src="//code.tidio.co/tdv8h5nvfvmunnpiatdnog3kzoprjp4w.js" async></script>
 </body>
 </html>
