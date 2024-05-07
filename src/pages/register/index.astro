@@ -94,33 +94,64 @@ import Header from '../../components/Header.astro';
             </form>
         </div>
     </section>
-    <script>
-        const registerForm = document.getElementById('registerForm') as HTMLFormElement;
-        if (registerForm) {
+    Code snippet
+    ---
+    import Header from '../../components/Header.astro';
+    ---
+    
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <script defer src="https://analytics.us.umami.is/script.js" data-website-id="326ffd8a-2da0-4179-badb-f872644369b3"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Register | PixelBrew - Virtual Tech Assistance</title>
+    </head>
+    <body class="font-sans bg-gray-50 overflow-x-hidden">
+        <Header />
+        <div class="bg-base-100 flex items-center justify-center">
+            <section class="container mx-auto px-8 lg:px-0 py-16">
+                <h1 class="text-5xl lg:text-6xl w-full lg:w-1/3 text-primary font-neuebit leading-[2rem]">Sign Up</h1>
+            </section>
+            </div>
+        <section class="bg-neutral" id="professional">
+            </section>
+        <script>
+            const registerForm = document.getElementById('registerForm') as HTMLFormElement;
             let formSubmitted = false;
-            registerForm.addEventListener('submit', (event) => {
-                event.preventDefault(); // Prevent the default form submission behavior
-                fetch('https://hook.us1.make.com/wg9wyxh8tiigco9p5e1bwsq8aerbu899', {
-                    method: 'POST',
-                    body: new FormData(registerForm)
-                })
-                .then(response => {
-                    formSubmitted = true; // Set the flag to true upon successful form submission
-                    // Additional success handling if needed
-                })
-                .catch(error => {
-                    console.error('Error submitting form:', error);
+    
+            if (registerForm) {
+                registerForm.addEventListener('submit', (event) => {
+                    event.preventDefault();
+    
+                    try {
+                        fetch('https://hook.us1.make.com/wg9wyxh8tiigco9p5e1bwsq8aerbu899', {
+                            method: 'POST',
+                            body: new FormData(registerForm)
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                formSubmitted = true;
+                                window.location.href = 'https://pixelbrew.co/register/success';
+                            } else {
+                                // Handle unsuccessful form submission
+                                console.error('Form submission failed', response);
+                                // Display a suitable error message to the user 
+                            }
+                        })
+                        .catch((error: Error) => {
+                            console.error('Error submitting form:', error);
+                            // Display a suitable error message to the user
+                        }); 
+                    } catch (error) {
+                        console.error('Error in form submission:', error);
+                        // Display a suitable error message to the user
+                    }
                 });
-            });
-
-            // Redirect only if the form has been successfully submitted
-            window.addEventListener('load', () => {
-                if (formSubmitted) {
-                    window.location.href = 'https://pixelbrew.co/register/success';
-                }
-            });
-        }
-    </script>
+            } else {
+                console.error('Form element not found!');
+            }
+        </script>
     <script src="//code.tidio.co/tdv8h5nvfvmunnpiatdnog3kzoprjp4w.js" async></script>
 </body>
 </html>
