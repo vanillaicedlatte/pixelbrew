@@ -1,0 +1,86 @@
+---
+import Header from '../components/Header.astro';
+---
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script defer src="https://analytics.us.umami.is/script.js" data-website-id="326ffd8a-2da0-4179-badb-f872644369b3"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register | PixelBrew - Virtual Tech Assistance</title>
+</head>
+<body class="font-sans bg-gray-50 overflow-x-hidden">
+    <Header />
+    <div class="bg-base-100 flex items-center justify-center">
+        <section class="container mx-auto px-8 lg:px-0 py-16">
+            <h1 class="text-5xl lg:text-6xl w-full lg:w-1/3 text-primary font-neuebit leading-[2rem]">Sign Up</h1>
+        </section>
+        </div>
+    <section class="bg-neutral" id="professional">
+        <div class="container mx-auto lg:py-16 text-base-100">
+            Sign up below to get started requesting tasks!
+        </div>
+        <div class="container mx-auto lg:py-16 text-base-100">
+            <form action="/submit" method="post" class="container mx-auto px-8 lg:px-0 py-8">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required class="input" />
+                    </div>
+                    <div>
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required class="input" />
+                    </div>
+                </div>
+
+                <label for="businessName">Business Name</label>
+                <input type="text" id="businessName" name="businessName" required class="input" />
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required class="input" />
+                    </div>
+                    <div>
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" required class="input" />
+                    </div>
+                </div>
+
+                <label for="website">Website</label>
+                <input type="url" id="website" name="website" class="input" />
+
+                <label for="lineOfBusiness">What is your line of business?</label>
+                <input type="text" id="lineOfBusiness" name="lineOfBusiness" required class="input" />
+
+                <label for="tasksInterest">What kinds of tasks are you interested in having completed?</label>
+                <input type="text" id="tasksInterest" name="tasksInterest" required class="input" />
+
+                <label for="requestFrequency">How often do you see yourself requesting tasks?</label>
+                <select id="requestFrequency" name="requestFrequency" class="input">
+                    <option value="testing">Just testing this out for now</option>
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">A few times a month</option>
+                </select>
+
+                <label for="communicationMethod">What is your preferred method of communication?</label>
+                <select id="communicationMethod" name="communicationMethod" class="input">
+                    <option value="email">Email</option>
+                    <option value="text">Text</option>
+                </select>
+
+                <label for="introMeeting">Would you like to set up an introductory Zoom meeting?</label>
+                <select id="introMeeting" name="introMeeting" class="input">
+                    <option value="yes">Yes</option>
+                    <option value="no">Not at this time</option>
+                </select>
+
+                <button type="submit" class="btn btn-primary mt-4">Submit</button>
+            </form>
+        </div>
+    </section>
+    <script src="//code.tidio.co/tdv8h5nvfvmunnpiatdnog3kzoprjp4w.js" async></script>
+</body>
+</html>
