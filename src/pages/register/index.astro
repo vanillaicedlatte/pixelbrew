@@ -95,23 +95,6 @@ import Header from '../../components/Header.astro';
         </div>
     </section>
     <script src="//code.tidio.co/tdv8h5nvfvmunnpiatdnog3kzoprjp4w.js" async></script>
-    <script>
-        const form = document.querySelector('form[name="registerForm"]');
-        form?.addEventListener('submit', function(event) {
-      
-          // Disable the submit button (assuming it exists)
-          const submitButton = form.querySelector('button[type="submit"]');
-          submitButton?.classList.add('disabled'); 
-      
-          // Submit the form to Netlify 
-          (form as HTMLFormElement).submit();  
-      
-          // Redirect to the success page after a short delay
-          setTimeout(() => {
-            window.location.href = '/success/';
-          }, 1000); 
-        });
-      </script>
       
 </body>
 </html>
