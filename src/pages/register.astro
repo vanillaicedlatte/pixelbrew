@@ -22,7 +22,7 @@ import Header from '../components/Header.astro';
             Sign up below to get started requesting tasks!
         </div>
         <div class="container mx-auto text-base-100 w-full lg:w-1/2">
-            <form action="https://hook.us1.make.com/wg9wyxh8tiigco9p5e1bwsq8aerbu899" method="post" class="container mx-auto px-8 lg:px-0 py-8">
+            <form id="registerForm" action="https://hook.us1.make.com/wg9wyxh8tiigco9p5e1bwsq8aerbu899" method="post" class="container mx-auto px-8 lg:px-0 py-8">
                 <div class="grid grid-cols-2 gap-4 pb-2">
                     <div>
                         <label class="flex flex-col" for="firstName">First Name
@@ -94,6 +94,21 @@ import Header from '../components/Header.astro';
             </form>
         </div>
     </section>
+    <script>
+        const registerForm = document.getElementById('registerForm') as HTMLFormElement;
+            if (registerForm) {
+                fetch('https://hook.us1.make.com/wg9wyxh8tiigco9p5e1bwsq8aerbu899', {
+                    method: 'POST',
+                    body: new FormData(registerForm)
+                })
+                .then(response => {
+                    window.location.href = 'https://pixelbrew.co/register/success';
+                })
+                .catch(error => {
+                    console.error('Error submitting form:', error);
+                });
+            }
+    </script>
     <script src="//code.tidio.co/tdv8h5nvfvmunnpiatdnog3kzoprjp4w.js" async></script>
 </body>
 </html>
