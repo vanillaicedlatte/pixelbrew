@@ -94,6 +94,24 @@ import Header from '../../components/Header.astro';
             </form>
         </div>
     </section>
+    <script>
+        // Get the phone input element
+        const phoneInput = document.getElementById('phone');
+
+        // Add an input event listener to format the phone number as it is typed
+        if (phoneInput) {
+            phoneInput.addEventListener('input', function(e) {
+            // Remove all non-numeric characters from the input value
+            if ((e.target as HTMLInputElement)) {
+                let cleaned = (e.target as HTMLInputElement).value.replace(/\D/g, '');
+                if (cleaned.length > 0) {
+                    cleaned = '(' + cleaned.substring(0, 3) + ') ' + cleaned.substring(3, 6) + '-' + cleaned.substring(6, 10);
+                }
+                (e.target as HTMLInputElement).value = cleaned;
+            }
+        });
+    }
+    </script>
     <script src="//code.tidio.co/tdv8h5nvfvmunnpiatdnog3kzoprjp4w.js" async></script>
       
 </body>
