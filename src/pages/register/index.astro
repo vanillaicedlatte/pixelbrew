@@ -1,5 +1,7 @@
 ---
 import Header from '../../components/Header.astro';
+import { post as handleFormSubmission } from '../../utils.js';
+
 ---
 
 <html lang="en">
@@ -22,7 +24,7 @@ import Header from '../../components/Header.astro';
             Sign up below to get started requesting tasks!
         </div>
         <div class="container mx-auto text-base-100 w-full lg:w-1/2">
-            <form name="registerForm" netlify netlify-honeypot action="https://pixelbrew.co/register/success/" class="container mx-auto px-8 lg:px-0 py-8">
+            <form name="registerForm" onsubmit={handleSubmit} netlify netlify-honeypot class="container mx-auto px-8 lg:px-0 py-8">
                 <div class="grid grid-cols-2 gap-4 pb-2">
                     <div>
                         <label class="flex flex-col" for="firstName">First Name
@@ -94,6 +96,33 @@ import Header from '../../components/Header.astro';
             </form>
         </div>
     </section>
+    <script is:inline> 
+    async function handleSubmit(event) { 
+      event.preventDefault();
+      
+      try {
+        const response = await handleFormSubmission(new FormData(event.target));
+    
+        if (response.status === 303) {
+          // Redirect to success page 
+          window.location.href = '/register/success'; // Adjust success page URL if needed
+        } else {
+          // Potential error occurred, but not a redirect 
+          throw new Error('Form submission failed'); 
+        }
+    
+      } catch (error) {
+        // Handle the error and display user feedback
+        console.error("Error submitting form:", error); 
+    
+        // Example: Displaying an error message 
+        const errorDiv = document.createElement('div');
+        errorDiv.classList.add('error-message'); // Style this class as needed
+        errorDiv.textContent = 'There was an error submitting your form. Please try again.';
+        event.target.insertBefore(errorDiv, event.target.firstChild); 
+      }
+    } 
+    </script>
     <script src="//code.tidio.co/tdv8h5nvfvmunnpiatdnog3kzoprjp4w.js" async></script>
       
 </body>
